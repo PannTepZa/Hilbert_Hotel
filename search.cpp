@@ -63,14 +63,44 @@ int main(){
             r_count++;
         }
 
-        for(int i = 0; i < r_count; i++){
-        cout << "Room: " << info[i].getNumber()
-             << " | Type: " << info[i].getTypePtr()->getType()
-             << " | Price: " << info[i].getTypePtr()->getPrice()
-             << " | Occupied: " 
-             << (info[i].isOccupied() ? "YES" : "NO")
-             << endl;
+
+        cout << "------------------------" << endl;
+        cout << "WELCOME TO HILBERT HOTEL" << endl;
+        cout << "------------------------" << endl;
+        char respond;
+        int people;
+        string bed_size,bath_size;
+        double price;
+        Date record;
+
+        cout << "Are you a customer? (Y/N) : ";
+        cin >> respond;
+        if (respond == 'N') return 0;
+        while (true){
+            cout << "Please select date you want to check in" << endl;
+            cout << "Years (in A.D) : ";
+            cin >> record.years;
+            cout << "Month (1-12) : ";
+            cin >> record.month;
+            if (daysInMonth(record.month,record.years) == 31) cout << "Date (1-31) : ";
+            if (daysInMonth(record.month,record.years) == 30) cout << "Date (1-30) : ";
+            if (daysInMonth(record.month,record.years) == 29) cout << "Date (1-29) : ";
+            if (daysInMonth(record.month,record.years) == 28) cout << "Date (1-28) : ";
+            cin >> record.day;
+            cout << "You want to check in at "<< record.day << "/" << record.month << "/" << record.years << endl;
+            cout << "Do you want to confirm? (Y/N) :";
+            cin >> respond;
+            if (respond == 'N') continue;
+            cout << "Please select date you want to check out" << endl;
         }
+        
+        
+
+
+        
+
+
+        
 
         
 

@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include "booking.h"
 using namespace std;
 
 class Room; 
@@ -8,6 +9,7 @@ class RoomInfo{
         int room_number;
         Room* room_type;
         bool occupied;
+        vector<Reservation> bookings;
         public:
             void setRoom(int num, Room* type, bool occ) {
                 room_number = num;
